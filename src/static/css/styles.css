@@ -1,8 +1,14 @@
 body {
     background-color: #f4f4f4;
+    background: rgb(255,239,0);
+    background: linear-gradient(90deg, rgba(255,239,0,1) 0%, rgba(255,0,241,1) 25%, rgba(0,255,230,1) 97%);
     margin-top: 50px;
     font-family: 'Lato';
 }
+
+.bounce-top{animation:bounce-top .9s both}
+
+@keyframes bounce-top{0%{transform:translateY(-45px);animation-timing-function:ease-in;opacity:1}24%{opacity:1}40%{transform:translateY(-24px);animation-timing-function:ease-in}65%{transform:translateY(-12px);animation-timing-function:ease-in}82%{transform:translateY(-6px);animation-timing-function:ease-in}93%{transform:translateY(-4px);animation-timing-function:ease-in}25%,55%,75%,87%{transform:translateY(0);animation-timing-function:ease-out}100%{transform:translateY(0);animation-timing-function:ease-out;opacity:1}}
 
 .item {
     background-color: white;
@@ -20,6 +26,8 @@ body {
 
 .item.completed {
     text-decoration: line-through;
+    animation-name: bounce-top;
+    animation-duration: 1s;
 }
 
 .toggles {
@@ -36,4 +44,5 @@ body {
 
 button:focus {
     border: 1px solid #333;
+    background-image: url("https://tenor.com/view/troll-face-creepy-smile-gif-18297390");
 }
